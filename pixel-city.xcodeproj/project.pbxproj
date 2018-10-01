@@ -12,6 +12,7 @@
 		19D775CC21621082003EAEDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19D775CA21621082003EAEDA /* Main.storyboard */; };
 		19D775CE21621086003EAEDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D775CD21621086003EAEDA /* Assets.xcassets */; };
 		19D775D121621086003EAEDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19D775CF21621086003EAEDA /* LaunchScreen.storyboard */; };
+		19D775DD21623D1B003EAEDA /* DroppablePin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D775DC21623D1B003EAEDA /* DroppablePin.swift */; };
 		73B7D8B584AFB33263F5622D /* Pods_pixel_city.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 440906C63352965CB384637A /* Pods_pixel_city.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		19D775CD21621086003EAEDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19D775D021621086003EAEDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19D775D221621086003EAEDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19D775DC21623D1B003EAEDA /* DroppablePin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroppablePin.swift; sourceTree = "<group>"; };
 		440906C63352965CB384637A /* Pods_pixel_city.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pixel_city.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA958BFAE024AD5EC1A547C /* Pods-pixel-city.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pixel-city.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pixel-city/Pods-pixel-city.debug.xcconfig"; sourceTree = "<group>"; };
 		C13F0E1E7642229B23267C62 /* Pods-pixel-city.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pixel-city.release.xcconfig"; path = "Pods/Target Support Files/Pods-pixel-city/Pods-pixel-city.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		19D775D9216210E7003EAEDA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				19D775DC21623D1B003EAEDA /* DroppablePin.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19D775C921621082003EAEDA /* MapVC.swift in Sources */,
+				19D775DD21623D1B003EAEDA /* DroppablePin.swift in Sources */,
 				19D775C721621082003EAEDA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
