@@ -51,7 +51,7 @@ class MapVC: UIViewController, UIGestureRecognizerDelegate {
         collectionView?.register(PhotoCell.self, forCellWithReuseIdentifier: "photoCell")
         collectionView?.delegate = self
         collectionView?.dataSource = self
-        collectionView?.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+        collectionView?.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         pullUpView.addSubview(collectionView!)
         
@@ -60,7 +60,7 @@ class MapVC: UIViewController, UIGestureRecognizerDelegate {
 
     func addDoubleTap() {
         let doubleTap = UITapGestureRecognizer(target: self, action: #selector(dropPin(sender:)))
-        doubleTap.numberOfTouchesRequired = 1 // doubletap is not working in simulator
+        doubleTap.numberOfTouchesRequired = 1 // doubletap is not working in simulator maps
         doubleTap.delegate = self
         mapView.addGestureRecognizer(doubleTap)
         
@@ -108,8 +108,8 @@ class MapVC: UIViewController, UIGestureRecognizerDelegate {
     
     func addProgressLbl(){
         progressLbl = UILabel()
-        progressLbl?.frame = CGRect(x: (screenSize.width / 2) - 120, y: 175, width: 200, height: 40)
-        progressLbl?.font = UIFont(name: "Avenir Next", size: 14)
+        progressLbl?.frame = CGRect(x: (screenSize.width / 2) - 100, y: 175, width: 200, height: 40)
+        progressLbl?.font = UIFont(name: "Avenir Next", size: 12)
         progressLbl?.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         progressLbl?.textAlignment = .center
         collectionView?.addSubview(progressLbl!)
@@ -219,6 +219,7 @@ extension MapVC: MKMapViewDelegate {
                 guard let image = response.result.value else { return }
                 self.imageArray.append(image)
                 self.progressLbl?.text = "\(self.imageArray.count)/40 IMAGES DOWNLOADED"
+                self.progressLbl?.textAlignment = .center
                 
                 if self.imageArray.count == self.imageUrlArray.count {
                     handler(true)
@@ -268,6 +269,12 @@ extension MapVC: UICollectionViewDelegate, UICollectionViewDataSource {
         let imageView = UIImageView(image: imageFromIndex)
         cell.addSubview(imageView)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let popVC = storyboard?.instantiateViewController(withIdentifier: "PopVC") as? PopVC else { return }
+        popVC.initData(forImage: imageArray[indexPath.row])
+        present(popVC, animated: true, completion: nil)
     }
   
 }
